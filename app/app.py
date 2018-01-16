@@ -138,7 +138,7 @@ if __name__ == '__main__':
     if environment == 'production':
         # Run Tornado server
         http_server = HTTPServer(WSGIContainer(app))
-        http_server.listen(port)
+        http_server.listen(8080)
         IOLoop.instance().start()
 
     else:
