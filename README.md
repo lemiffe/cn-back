@@ -29,9 +29,10 @@ Backend Flask-based API for CN-APP
 
 **Set up the ports (on the server):**
 - dokku proxy:ports cn-back (see list of ports, see the port of your container)
-- dokku proxy:ports-add cn-back http:1338:5000 (host 1338 will map to your container now)
-- dokku proxy:ports-add cn-back https:1338:5000 (host 1338 will map to your container now)
+- dokku proxy:ports-add cn-back http:1338:8080 (host 1338 will map to your container now)
+- dokku proxy:ports-add cn-back https:1338:8080 (host 1338 will map to your container now)
 - If adding https fails, first set up SSL (see below)
+- If you messed up the ports, run dokku proxy:ports-clear cn-back
 
 **Troubleshooting:**
 - Read this for more info: http://dokku.viewdocs.io/dokku~v0.11.3/deployment/application-deployment/
