@@ -34,6 +34,9 @@ jobs:
           name: SSH access for unknown host
           command: git config core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
       - run:
+          name: SSH access for unknown ip
+          command: ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+      - run:
           name: Deploy via dokku
           command: git push dokku master
 
