@@ -13,10 +13,10 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: cd ~/app && pip install -r requirements.txt
+          command: cd ~/app && sudo pip3 install -r requirements.txt
       - run:
           name: Run Tests
-          command: cd ~/app && python app/test.py
+          command: cd ~/app && python3 app/test.py
 
   deploy-job:
     docker:
