@@ -126,6 +126,13 @@ def make_error(msg, code):
     return response
 
 
+def init():
+    """Initialise app with global libraries (required by unit tests)"""
+    #global libraryName
+    #libraryName = LibraryClass()
+    return
+
+
 if __name__ == '__main__':   
     
     if environment == 'production':
