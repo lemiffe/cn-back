@@ -18,6 +18,9 @@ jobs:
           name: Use default (dist) config.ini
           command: cd ~/app && cp config.ini.dist config.ini
       - run:
+          name: SSH access for unknown host
+          command: git config core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+      - run:
           name: Run Tests
           command: cd ~/app && python3 app/test.py
 
