@@ -18,9 +18,6 @@ jobs:
           name: Use default (dist) config.ini
           command: cd ~/app && cp config.ini.dist config.ini
       - run:
-          name: SSH access for unknown host
-          command: git config core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-      - run:
           name: Run Tests
           command: cd ~/app && python3 app/test.py
 
@@ -33,6 +30,9 @@ jobs:
       - run:
           name: Add dokku remotely
           command: git remote add dokku dokku@$SERVER_IP:cn-back
+      - run:
+          name: SSH access for unknown host
+          command: git config core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
       - run:
           name: Deploy via dokku
           command: git push dokku master
