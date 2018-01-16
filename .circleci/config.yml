@@ -15,6 +15,9 @@ jobs:
           name: Install dependencies
           command: cd ~/app && sudo pip3 install -r requirements.txt
       - run:
+          name: Use default (dist) config.ini
+          command: cd ~/app && cp config.ini.dist config.ini
+      - run:
           name: Run Tests
           command: cd ~/app && python3 app/test.py
 
