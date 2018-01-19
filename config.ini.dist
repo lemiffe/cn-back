@@ -1,5 +1,5 @@
 [database]
-db_host=localhost
+db_host=cn-db
 db_port=27017
 db_name=primary
 db_user=john
@@ -7,3 +7,8 @@ db_pwd=1jd019x1h9bsFdJD
 
 [server]
 environment=development
+
+[auth0]
+domain=your-site.auth0.com
+audience=https://your-site.com/
+algorithm=RS256
