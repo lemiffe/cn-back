@@ -1,9 +1,9 @@
 [database]
-db_host=cn-db
-db_port=27017
 db_name=primary
 db_user=john
 db_pwd=1jd019x1h9bsFdJD
+db_host=cn-db
+db_port=27017
 
 [server]
 environment=development
@@ -11,4 +11,4 @@ environment=development
 [auth0]
 domain=your-site.auth0.com
 audience=https://your-site.com/
-algorithm=RS256
+algorithms=RS256
