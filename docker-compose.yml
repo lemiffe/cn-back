@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+    web:
+        build: .
+        volumes:
+            - ./config.ini:/cn-back/config.ini
+            - ./app/:/cn-back/app/
+        ports:
+            - "1338:8080"
+        networks:
+            - default
+            - cnetwork
+        container_name: cn-back
+
+networks:
+    cnetwork:
+        external: true
