@@ -112,6 +112,7 @@ def get_token_auth_header():
     token = parts[1]
     return token
 
+
 def requires_auth(f):
     """Determines if the access token is valid
     """
@@ -136,9 +137,9 @@ def requires_auth(f):
                 payload = jwt.decode(
                     token,
                     rsa_key,
-                    algorithms = auth0_algorithms,
-                    audience = auth0_audience,
-                    issuer = "https://" + auth0_domain + "/"
+                    algorithms=auth0_algorithms,
+                    audience=auth0_audience,
+                    issuer="https://" + auth0_domain + "/"
                 )
             except jwt.ExpiredSignatureError:
                 raise AuthError({"code": "token_expired",
@@ -193,7 +194,7 @@ def index():
 
 
 @app.route("/private")
-@limiter.limit("1000/hour", key_func = lambda : 'current_user.username') # TODO use ip+user combination
+@limiter.limit("1000/hour", key_func=lambda: 'current_user.username')  # TODO use ip+user combination
 @cross_origin(headers=['Content-Type', 'Authorization'])
 @requires_auth
 def private_place():

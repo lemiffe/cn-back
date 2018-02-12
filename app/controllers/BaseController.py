@@ -8,7 +8,7 @@ class BaseController:
         response = {
             'meta': {
                 'code': '200',
-                'message': 'OK',
+                'message': 'OK'
             },
             'response': obj
         }
@@ -20,7 +20,7 @@ class BaseController:
         response = {
             'meta': {
                 'code': int(code),
-                'message': str(msg),
+                'message': str(msg)
             },
             'response': None
         }

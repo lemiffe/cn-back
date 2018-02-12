@@ -1,6 +1,7 @@
 from services.UserService import UserService
 from controllers.BaseController import BaseController
 
+
 class UserController(BaseController):
     
     def __init__(self, app):
