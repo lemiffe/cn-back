@@ -1,4 +1,4 @@
-Flask==0.12.2
+Flask==0.12.4
 Flask-Cors==3.0.3
 Flask-Limiter==1.0.1
 tornado==4.5.3
